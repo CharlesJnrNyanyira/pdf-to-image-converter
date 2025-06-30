@@ -91,5 +91,9 @@ def pdf_to_images_zip():
 def health_check():
     return jsonify({'status': 'healthy', 'service': 'PDF to Image Converter'})
 
+@app.route('/', methods=['GET'])
+def home():
+    return jsonify({'message': 'PDF to Image Converter API', 'status': 'running'})
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
